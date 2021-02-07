@@ -8,27 +8,33 @@ function Movies(props) {
   const {toggle} = props;
   const [searchText, setSearchText] = useState("");
   const [movieResults, setMovieResults] = useState({});
+  const [history, setHistory] = useState({});
   const {userRef, dbRef} = useContext(UserContext);
 
   const rateMovie = async function (e) {
     const movieID = e.target.parentElement.id;
     const movieRating = e.target.value;
-    var newRating = {};
-    newRating[movieID] = movieRating;
-    /*
-    const docRef = await dbRef.get();
-    const docHistoryRef = await docRef.data();
-    let docHistory = docHistoryRef.ratings;
-    let newHistory = [...docHistory];
-    newHistory.push(newRating);
-    console.log(newHistory);
-    await dbRef.update({ratings:newHistory}).then(console.log('updated', newRating));*/
-    const docRef = await dbRef.get();
-    const docHistoryRef = await docRef.data();
-    let docHistory = docHistoryRef.ratings;
-    docHistory[movieID] = movieRating;
-    await dbRef.update({ratings:docHistory}).then(console.log('updated',docHistory));
+    //
+    var newRatings = history;
+    newRatings[movieID] = movieRating;
+    //
+    await dbRef.update({ratings:newRatings})
+    .then(console.log('updated',newRatings))
+    .then(setHistory(newRatings))
+    .catch(err => {console.log("updating history failed", err)});
+
+    console.log(history);
   };
+
+  useEffect(async() =>{
+    if(dbRef){
+      const docRef = await dbRef.get();
+      const docHistoryRef = await docRef.data();
+      setHistory(docHistoryRef.ratings);
+    }
+    //DO NOT RESET SERVER
+  },[]);
+
 
   useEffect(() => {
     fetch("https://www.omdbapi.com?apikey=3fe96115&s=" + searchText)
@@ -64,7 +70,7 @@ function Movies(props) {
         ></input>
       </div>
       <div className="MovieResults">
-        {movieResults.Response === "True" ? <MovieList movies={movieResults} rateMovie={rateMovie}/> : <h1>No Results</h1>}
+        {movieResults.Response === "True" ? <MovieList movies={movieResults} rateMovie={rateMovie} history={history}/> : <h1>No Results</h1>}
       </div>
     </section>
   );
