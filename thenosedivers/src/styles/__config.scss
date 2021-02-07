@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+    margin:0;
+    padding:0;
+}
+$theme-color-red:#ff4655;
+$theme-color-black:#0f1923;
+$theme-color-white: #ece8e1;
+
+$font-family-heading:'Allerta Stencil', sans-serif;
+$font-family-typography:'Poppins', sans-serif;
+
+h1{
+    font-family:$font-family-heading;
+}
+
+p,input,button,h4{
+    font-family:$font-family-typography;
+}

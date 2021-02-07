@@ -1,0 +1,97 @@
+[debug] [2021-01-27T17:41:07.396Z] ----------------------------------------------------------------------
+[debug] [2021-01-27T17:41:07.398Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\alexs\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2021-01-27T17:41:07.398Z] CLI Version:   9.2.2
+[debug] [2021-01-27T17:41:07.398Z] Platform:      win32
+[debug] [2021-01-27T17:41:07.398Z] Node Version:  v12.19.0
+[debug] [2021-01-27T17:41:07.399Z] Time:          Wed Jan 27 2021 12:41:07 GMT-0500 (Eastern Standard Time)
+[debug] [2021-01-27T17:41:07.399Z] ----------------------------------------------------------------------
+[debug] [2021-01-27T17:41:07.399Z] 
+[debug] [2021-01-27T17:41:07.404Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-01-27T17:41:07.404Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Projects\TheShoppies\thenosedivers
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+  * You are initializing in an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  .firebaserc already has a default project, using thenosedivers. 
+[debug] [2021-01-27T17:41:13.046Z] > refreshing access token with scopes: []
+[debug] [2021-01-27T17:41:13.046Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-01-27T17:41:13.173Z] <<< HTTP RESPONSE 200 {"date":"Wed, 27 Jan 2021 17:41:13 GMT","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-01-27T17:41:13.194Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/thenosedivers [none]
+[debug] [2021-01-27T17:41:13.370Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/thenosedivers 200
+[debug] [2021-01-27T17:41:13.370Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/thenosedivers {"projectId":"thenosedivers","projectNumber":"659380336794","displayName":"TheNosedivers","name":"projects/thenosedivers","resources":{"hostingSite":"thenosedivers","realtimeDatabaseInstance":"thenosedivers-default-rtdb","storageBucket":"thenosedivers.appspot.com","locationId":"us-central"},"state":"ACTIVE"}
+[info] 
+=== Database Setup
+[info] i  database: ensuring required API firebasedatabase.googleapis.com is enabled... 
+[debug] [2021-01-27T17:41:13.384Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-01-27T17:41:13.385Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-01-27T17:41:13.467Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Wed, 27 Jan 2021 17:41:13 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-01-27T17:41:13.479Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/thenosedivers/services/firebasedatabase.googleapis.com  
+ 
+[debug] [2021-01-27T17:41:13.845Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 27 Jan 2021 17:41:13 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] +  database: required API firebasedatabase.googleapis.com is enabled 
+[info] 
+[debug] [2021-01-27T17:41:13.847Z] > refreshing access token with scopes: []
+[debug] [2021-01-27T17:41:13.848Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-01-27T17:41:13.919Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Wed, 27 Jan 2021 17:41:13 GMT","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-01-27T17:41:13.932Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/thenosedivers [none]
+[debug] [2021-01-27T17:41:14.096Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/thenosedivers 200
+[debug] [2021-01-27T17:41:14.096Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/thenosedivers {"projectId":"thenosedivers","projectNumber":"659380336794","displayName":"TheNosedivers","name":"projects/thenosedivers","resources":{"hostingSite":"thenosedivers","realtimeDatabaseInstance":"thenosedivers-default-rtdb","storageBucket":"thenosedivers.appspot.com","locationId":"us-central"},"state":"ACTIVE"}
+[debug] [2021-01-27T17:41:14.097Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-01-27T17:41:14.097Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-01-27T17:41:14.177Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","date":"Wed, 27 Jan 2021 17:41:14 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-01-27T17:41:14.194Z] >>> HTTP REQUEST GET https://firebasedatabase.googleapis.com/v1beta/projects/thenosedivers/locations/-/instances/thenosedivers-default-rtdb  
+ 
+[debug] [2021-01-27T17:41:14.538Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 27 Jan 2021 17:41:14 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] Firebase Realtime Database Security Rules allow you to define how your data should be
+[info] structured and when your data can be read from and written to.
+[info] 
+[debug] [2021-01-27T17:41:17.223Z] >>> HTTP REQUEST GET https://thenosedivers-default-rtdb.firebaseio.com/.settings/rules.json  
+ 
+[debug] [2021-01-27T17:41:17.418Z] <<< HTTP RESPONSE 200 {"server":"nginx","date":"Wed, 27 Jan 2021 17:41:17 GMT","content-type":"application/json; charset=utf-8","content-length":"61","connection":"keep-alive","access-control-allow-origin":"*","cache-control":"no-cache","strict-transport-security":"max-age=31556926; includeSubDomains; preload"}
+[info] +  Database Rules for thenosedivers-default-rtdb have been written to database.rules.json. 
+[info] Future modifications to database.rules.json will update Realtime Database Security Rules when you run
+[info] firebase deploy.
+[info] 
+=== Firestore Setup
+[debug] [2021-01-27T17:41:17.430Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/thenosedivers/services/firestore.googleapis.com  
+ 
+[debug] [2021-01-27T17:41:17.723Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 27 Jan 2021 17:41:17 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-01-27T17:41:17.724Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/thenosedivers  
+ 
+[debug] [2021-01-27T17:41:18.085Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 27 Jan 2021 17:41:18 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-01-27T17:41:18.086Z] database_type: CLOUD_FIRESTORE
+[debug] [2021-01-27T17:41:18.087Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-01-27T17:41:18.088Z] > authorizing via signed-in user
+[debug] [2021-01-27T17:41:18.088Z] [iam] checking project thenosedivers for permissions ["firebase.projects.get"]
+[debug] [2021-01-27T17:41:18.089Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/thenosedivers:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2021-01-27T17:41:18.197Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 27 Jan 2021 17:41:18 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=63","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] Firestore Security Rules allow you to define how and when to allow
+[info] requests. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
