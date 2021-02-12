@@ -1,10 +1,16 @@
 import '../styles/UserDashboard.scss';
-import React, { useState, useContext } from 'react';
+import React from 'react';
+import Profile from './dashboard/Profile';
+import Friends from './dashboard/Friends';
+import History from './dashboard/History';
 
 function UserDashboard(props){
-    const {toggle} = props;
+    const {msg} = props;
     return (
-        <div className="UserDashboard">
+        <div className="dashboardWrapper">
+          {msg === "profile" && <Profile></Profile>}
+          {msg === "friends" && <Friends></Friends>}
+          {msg === "history" && <History></History>}
         </div>
       );
 }

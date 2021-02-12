@@ -2,11 +2,13 @@ import '../styles/AuthComponent.scss';
 import { auth, db } from '../firebaseconfig';
 import React, { useEffect, useState, useContext } from 'react';
 import { UserContext } from './AuthProvider';
+import UserDashboard from './UserDashboard';
 function AuthComponent(props) {
     const { toggle } = props;
     const [hasAccount, setHasAccount] = useState(false);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [dashboardRoute, setDashboardRoute] = useState('profile');
     const { userRef, dbRef } = useContext(UserContext);
 
     const checkAuth = () => {
@@ -45,9 +47,13 @@ function AuthComponent(props) {
         <section className="AuthComponent" id="AuthComponent">
             {(userRef)
                 ? (<div className="UserDashboard">
-                    <span id="closeAuth" onClick={toggleAuth}></span>
-                    <button onClick={signOut}>OUT</button>
-                    <button onClick={checkData}>CEHCK</button>
+                    <div className="dashboardNav">
+                        <span id="closeAuth" onClick={toggleAuth}></span>
+                        <button onClick={() => setDashboardRoute('friends')}>FRIENDS</button>
+                        <button onClick={signOut}>OUT</button>
+                        <button onClick={checkData}>CEHCK</button>
+                    </div>
+                    <UserDashboard msg={dashboardRoute}></UserDashboard>
                 </div>)
                 : (<div className="AuthForm">
                     <span id="closeAuth" onClick={toggleAuth}></span>

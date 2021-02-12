@@ -11,22 +11,6 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     transition:all 1s ease-in-out;
-    #closeAuth{
-        position:absolute;
-        top:0;
-        right:0;
-        width:30px;
-        height:30px;
-        border-radius:15px;
-        text-align:center;
-        background-color:$theme-color-white;
-        transform:translate(50%, -50%);
-        cursor:pointer;
-        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
-        &:hover{
-            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-        }
-    }
     .AuthForm{
         height:400px;
         width:300px;

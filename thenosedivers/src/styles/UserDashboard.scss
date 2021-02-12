@@ -8,4 +8,28 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     transition:all 1s ease-in-out;
+    display:grid;
+    grid-template-columns: 100px auto;
+    .dashboardNav{
+        background-color:$theme-color-red;
+        padding:15px;
+        display:flex;
+        align-items: center;
+        flex-direction:column;
+        #closeAuth{
+            width:30px;
+            height:30px;
+            border-radius:15px;
+            text-align:center;
+            background-color:$theme-color-white;
+            cursor:pointer;
+            box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+            &:hover{
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            }
+        }
+    }
+    .dashboardWrapper{
+        padding:15px;
+    }
 }
