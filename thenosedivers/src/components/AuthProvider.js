@@ -42,6 +42,13 @@ class UserProvider extends Component {
       }
     });
   };
+
+  async findUserByEmail(userEmail){
+    const doc = await db.collection("users").where("email", "==", userEmail).get();
+    doc.forEach((obj) => {
+      return (obj.id, obj.data());
+    });
+  }
   render() {
     const userdata = this.state;
     return (
