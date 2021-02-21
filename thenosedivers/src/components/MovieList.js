@@ -23,7 +23,6 @@ const MovieList = (props) => {
 						{Object.keys(props.history).includes(movie.imdbID) &&
 							<p onClick={console.log('show')}>Rating History</p>
 						}
-
 					</form>
 					<p id="title">{movie.Title}</p>
 				</div>

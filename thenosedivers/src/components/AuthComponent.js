@@ -48,7 +48,7 @@ function AuthComponent(props) {
             {(userRef)
                 ? (<div className="UserDashboard">
                     <div className="dashboardNav">
-                        <span id="closeAuth" onClick={() => toggleAuth}></span>
+                        <span id="closeAuth" onClick={toggleAuth}></span>
                         <button onClick={() => setDashboardRoute('profile')}>PROFILE</button>
                         <button onClick={() => setDashboardRoute('friends')}>FRIENDS</button>
                         <button onClick={() => signOut}>OUT</button>
