@@ -1,29 +1,36 @@
 import "./styles/App.scss";
-import firebase from "firebase/app";
 import db from "./firebaseconfig";
-import React, { useState, useContext } from "react";
-import AuthComponent from "./components/AuthComponent";
-import UserDashboard from "./components/UserDashboard";
+import React, {useEffect, useReducer} from "react";
 import AuthProvider from "./components/AuthProvider";
-import { UserContext } from "./components/AuthProvider";
+import AuthComponent from "./components/AuthComponent";
 import Movies from "./components/Movies";
 
 function App() {
-  const { userRef, dbRef } = useContext(UserContext);
-
-  const fetch = function (prop) {
-    console.log(prop.uid);
-    console.log(userRef, dbRef);
-  };
   const closeAuthComponent = function () {
     document.getElementById("AuthComponent").style.height = "0";
   };
   const openAuthComponent = function () {
     document.getElementById("AuthComponent").style.height = "100%";
   };
+
+  const findUserByEmail = async function(userEmail){
+    const doc = await db.collection("users").where("email", "==", userEmail).get();
+    doc.forEach((obj) => {
+      return (obj.id, obj.data());
+    });
+  }
+
+  const findUserByDisplayName = async function(userName){
+    const doc = await db.collection("users").where("displayname", "array-contains", userName).get();
+    doc.forEach((obj) => {
+      return (obj.id, obj.data());
+    });
+  }
+
+  const fetcher = {findUserByEmail, findUserByDisplayName};
   return (
     <AuthProvider>
-      <AuthComponent toggle={closeAuthComponent}></AuthComponent>
+      <AuthComponent toggle = {closeAuthComponent}></AuthComponent>
       <Movies toggle={openAuthComponent}></Movies>
     </AuthProvider>
   );

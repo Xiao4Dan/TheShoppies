@@ -14,7 +14,6 @@ class UserProvider extends Component {
       console.log(userAuth);
       try {
         if (userAuth) {
-          //
           db.collection("users")
             .doc(userAuth.uid)
             .get()
@@ -23,7 +22,7 @@ class UserProvider extends Component {
                 db.collection("users")
                   .doc(userAuth.uid)
                   .set({
-                    displayname: "",
+                    displayname: userAuth.displayName,
                     email: userAuth.email,
                     friends: [],
                     ratings: {},
@@ -43,12 +42,6 @@ class UserProvider extends Component {
     });
   };
 
-  async findUserByEmail(userEmail){
-    const doc = await db.collection("users").where("email", "==", userEmail).get();
-    doc.forEach((obj) => {
-      return (obj.id, obj.data());
-    });
-  }
   render() {
     const userdata = this.state;
     return (

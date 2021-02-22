@@ -29,6 +29,15 @@
             outline:none;
             transition:all 0.5s ease-in-out;
         }
+        #closeAuth{
+            position:absolute;
+            top:0;
+            right:0;
+            height:50px;
+            width:50px;
+            cursor:pointer;
+            border:2px solid black;
+        }
         h1{
             font-size:3rem;
             color:$theme-color-black;
